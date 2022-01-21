@@ -1,0 +1,227 @@
+docker run --name=zendu -p 8080:8080 -p 50000:50000 -v /home/babu/test:/var/jenkins_home jenkins/jenkins
+
+
+login as: babu
+babu@20.204.6.210's password:
+Welcome to Ubuntu 18.04.6 LTS (GNU/Linux 5.4.0-1067-azure x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Fri Jan 21 13:38:58 UTC 2022
+
+  System load:  0.31              Processes:              144
+  Usage of /:   8.0% of 28.90GB   Users logged in:        0
+  Memory usage: 2%                IP address for eth0:    10.1.0.4
+  Swap usage:   0%                IP address for docker0: 172.17.0.1
+
+ * Super-optimized for small spaces - read how we shrank the memory
+   footprint of MicroK8s to make it the smallest full K8s around.
+
+   https://ubuntu.com/blog/microk8s-memory-optimisation
+
+0 updates can be applied immediately.
+
+
+Last login: Wed Jan 19 19:36:53 2022 from 103.167.176.190
+babu@babu2:~$ docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+babu@babu2:~$ docker images
+REPOSITORY                    TAG       IMAGE ID       CREATED       SIZE
+mmumshad/ubuntu-ssh-enabled   latest    5d069a774517   3 years ago   195MB
+babu@babu2:~$ docker ps -a
+CONTAINER ID   IMAGE                         COMMAND               CREATED      STATUS                    PORTS     NAMES
+6d6e608d4368   mmumshad/ubuntu-ssh-enabled   "/usr/sbin/sshd -D"   2 days ago   Exited (0) 41 hours ago             keen_shockley
+fbda67c739bc   mmumshad/ubuntu-ssh-enabled   "/usr/sbin/sshd -D"   2 days ago   Exited (0) 41 hours ago             flamboyant_haibt
+90e65f7a717d   mmumshad/ubuntu-ssh-enabled   "/usr/sbin/sshd -D"   2 days ago   Exited (0) 41 hours ago             confident_wilbur
+babu@babu2:~$ docker pull jenkins/jenkins
+Using default tag: latest
+latest: Pulling from jenkins/jenkins
+0e29546d541c: Pull complete
+11423c93b49c: Pull complete
+0a7e49db0973: Pull complete
+977259ae4ac6: Pull complete
+664d083fcd2d: Pull complete
+8a20d9bdf720: Pull complete
+cc94036a9149: Pull complete
+771e489c9ff6: Pull complete
+8f993e6e479d: Pull complete
+fe7f44ec184c: Pull complete
+6c4133528c73: Pull complete
+61cbb20e5e02: Pull complete
+dd69b26de89a: Pull complete
+bc3065f96156: Pull complete
+83fd8fe6efe0: Pull complete
+c14718fed25d: Pull complete
+563d4a8cb5f0: Pull complete
+Digest: sha256:53e6ac41ed49fce658086cb30f20f87e7efdd95c81ab41a2fbeb252fa7f2557b
+Status: Downloaded newer image for jenkins/jenkins:latest
+docker.io/jenkins/jenkins:latest
+babu@babu2:~$ docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+babu@babu2:~$ ll
+total 80
+drwxr-xr-x 6 babu babu  4096 Jan 19 20:33 ./
+drwxr-xr-x 3 root root  4096 Jan 19 13:56 ../
+drwx------ 3 babu babu  4096 Jan 19 20:24 .ansible/
+-rw------- 1 babu babu   613 Jan 19 20:33 .bash_history
+-rw-r--r-- 1 babu babu   220 Apr  4  2018 .bash_logout
+-rw-r--r-- 1 babu babu  3771 Apr  4  2018 .bashrc
+drwx------ 2 babu babu  4096 Jan 19 13:57 .cache/
+drwx------ 3 babu babu  4096 Jan 19 13:57 .gnupg/
+-rw-r--r-- 1 babu babu   807 Apr  4  2018 .profile
+drwx------ 2 babu babu  4096 Jan 19 13:56 .ssh/
+-rw-r--r-- 1 babu babu     0 Jan 19 13:57 .sudo_as_admin_successful
+-rw------- 1 babu babu 12288 Jan 19 20:08 .tirget.yml.swp
+-rw------- 1 babu babu   815 Jan 19 20:33 .viminfo
+-rw-r--r-- 1 root root 18617 Jan 19 13:59 get-docker.sh
+-rw-r--r-- 1 root root   174 Jan 19 14:13 inventory.txt
+babu@babu2:~$  $PWD
+-bash: /home/babu: Is a directory
+babu@babu2:~$ PWD
+PWD: command not found
+babu@babu2:~$ pdw
+
+Command 'pdw' not found, did you mean:
+
+  command 'pd' from deb puredata-core
+  command 'paw' from deb paw-common
+  command 'pdd' from deb pdd
+  command 'psw' from deb wise
+  command 'pda' from deb speech-tools
+  command 'pmw' from deb pmw
+  command 'pdv' from deb alliance
+  command 'cdw' from deb cdw
+  command 'pdl' from deb pdl
+  command 'pfw' from deb pftools
+  command 'pdb' from deb python
+  command 'pwd' from deb coreutils
+
+Try: sudo apt install <deb name>
+
+babu@babu2:~$ pwd
+/home/babu
+babu@babu2:~$ mkdir test
+babu@babu2:~$ ll
+total 84
+drwxr-xr-x 7 babu babu  4096 Jan 21 13:48 ./
+drwxr-xr-x 3 root root  4096 Jan 19 13:56 ../
+drwx------ 3 babu babu  4096 Jan 19 20:24 .ansible/
+-rw------- 1 babu babu   613 Jan 19 20:33 .bash_history
+-rw-r--r-- 1 babu babu   220 Apr  4  2018 .bash_logout
+-rw-r--r-- 1 babu babu  3771 Apr  4  2018 .bashrc
+drwx------ 2 babu babu  4096 Jan 19 13:57 .cache/
+drwx------ 3 babu babu  4096 Jan 19 13:57 .gnupg/
+-rw-r--r-- 1 babu babu   807 Apr  4  2018 .profile
+drwx------ 2 babu babu  4096 Jan 19 13:56 .ssh/
+-rw-r--r-- 1 babu babu     0 Jan 19 13:57 .sudo_as_admin_successful
+-rw------- 1 babu babu 12288 Jan 19 20:08 .tirget.yml.swp
+-rw------- 1 babu babu   815 Jan 19 20:33 .viminfo
+-rw-r--r-- 1 root root 18617 Jan 19 13:59 get-docker.sh
+-rw-r--r-- 1 root root   174 Jan 19 14:13 inventory.txt
+drwxrwxr-x 2 babu babu  4096 Jan 21 13:48 test/
+babu@babu2:~$ cd test
+babu@babu2:~/test$ ll
+total 8
+drwxrwxr-x 2 babu babu 4096 Jan 21 13:48 ./
+drwxr-xr-x 7 babu babu 4096 Jan 21 13:48 ../
+babu@babu2:~/test$ pdw
+
+Command 'pdw' not found, did you mean:
+
+  command 'pdb' from deb python
+  command 'pda' from deb speech-tools
+  command 'pdv' from deb alliance
+  command 'pmw' from deb pmw
+  command 'psw' from deb wise
+  command 'paw' from deb paw-common
+  command 'pdd' from deb pdd
+  command 'pwd' from deb coreutils
+  command 'pdl' from deb pdl
+  command 'cdw' from deb cdw
+  command 'pfw' from deb pftools
+  command 'pd' from deb puredata-core
+
+Try: sudo apt install <deb name>
+
+babu@babu2:~/test$ pwd
+/home/babu/test
+babu@babu2:~/test$ docker run --name=zendu -p 8080:8080 -p 50000:50000 -v /home/babu/test:/var/jenkins_home jenkins
+Unable to find image 'jenkins:latest' locally
+docker: Error response from daemon: manifest for jenkins:latest not found: manifest unknown: manifest unknown.
+See 'docker run --help'.
+babu@babu2:~/test$ docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+babu@babu2:~/test$ docker run --name=zendu -p 8080:8080 -p 50000:50000 -v /home/babu/test:/var/jenkins_home jenkins/jenkins
+
+Running from: /usr/share/jenkins/jenkins.war
+webroot: EnvVars.masterEnvVars.get("JENKINS_HOME")
+2022-01-21 13:51:39.480+0000 [id=1]     INFO    org.eclipse.jetty.util.log.Log#initialized: Logging initialized @531ms to org.eclipse.jetty.util.log.JavaUtilLog
+2022-01-21 13:51:39.562+0000 [id=1]     INFO    winstone.Logger#logInternal: Beginning extraction from war file
+2022-01-21 13:51:40.531+0000 [id=1]     WARNING o.e.j.s.handler.ContextHandler#setContextPath: Empty contextPath
+2022-01-21 13:51:40.591+0000 [id=1]     INFO    org.eclipse.jetty.server.Server#doStart: jetty-9.4.43.v20210629; built: 2021-06-30T11:07:22.254Z; git: 526006ecfa3af7f1a27ef3a288e2bef7ea9dd7e8; jvm 11.0.13+8
+2022-01-21 13:51:40.882+0000 [id=1]     INFO    o.e.j.w.StandardDescriptorProcessor#visitServlet: NO JSP Support for /, did not find org.eclipse.jetty.jsp.JettyJspServlet
+2022-01-21 13:51:40.925+0000 [id=1]     INFO    o.e.j.s.s.DefaultSessionIdManager#doStart: DefaultSessionIdManager workerName=node0
+2022-01-21 13:51:40.925+0000 [id=1]     INFO    o.e.j.s.s.DefaultSessionIdManager#doStart: No SessionScavenger set, using defaults
+2022-01-21 13:51:40.927+0000 [id=1]     INFO    o.e.j.server.session.HouseKeeper#startScavenging: node0 Scavenging every 660000ms
+2022-01-21 13:51:41.495+0000 [id=1]     INFO    hudson.WebAppMain#contextInitialized: Jenkins home directory: /var/jenkins_home found at: EnvVars.masterEnvVars.get("JENKINS_HOME")
+2022-01-21 13:51:41.725+0000 [id=1]     INFO    o.e.j.s.handler.ContextHandler#doStart: Started w.@4c2fb9dd{Jenkins v2.330,/,file:///var/jenkins_home/war/,AVAILABLE}{/var/jenkins_home/war}
+2022-01-21 13:51:41.753+0000 [id=1]     INFO    o.e.j.server.AbstractConnector#doStart: Started ServerConnector@6941827a{HTTP/1.1, (http/1.1)}{0.0.0.0:8080}
+2022-01-21 13:51:41.754+0000 [id=1]     INFO    org.eclipse.jetty.server.Server#doStart: Started @2807ms
+2022-01-21 13:51:41.756+0000 [id=24]    INFO    winstone.Logger#logInternal: Winstone Servlet Engine running: controlPort=disabled
+2022-01-21 13:51:42.056+0000 [id=31]    INFO    jenkins.InitReactorRunner$1#onAttained: Started initialization
+2022-01-21 13:51:42.082+0000 [id=30]    INFO    jenkins.InitReactorRunner$1#onAttained: Listed all plugins
+2022-01-21 13:51:42.955+0000 [id=34]    INFO    jenkins.InitReactorRunner$1#onAttained: Prepared all plugins
+2022-01-21 13:51:42.961+0000 [id=34]    INFO    jenkins.InitReactorRunner$1#onAttained: Started all plugins
+2022-01-21 13:51:42.967+0000 [id=31]    INFO    jenkins.InitReactorRunner$1#onAttained: Augmented all extensions
+2022-01-21 13:51:43.509+0000 [id=30]    INFO    jenkins.InitReactorRunner$1#onAttained: System config loaded
+2022-01-21 13:51:43.510+0000 [id=30]    INFO    jenkins.InitReactorRunner$1#onAttained: System config adapted
+2022-01-21 13:51:43.510+0000 [id=30]    INFO    jenkins.InitReactorRunner$1#onAttained: Loaded all jobs
+2022-01-21 13:51:43.512+0000 [id=30]    INFO    jenkins.InitReactorRunner$1#onAttained: Configuration for all jobs updated
+2022-01-21 13:51:43.561+0000 [id=49]    INFO    hudson.model.AsyncPeriodicWork#lambda$doRun$1: Started Download metadata
+2022-01-21 13:51:43.570+0000 [id=49]    INFO    hudson.util.Retrier#start: Attempt #1 to do the action check updates server
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.codehaus.groovy.reflection.CachedClass (file:/var/jenkins_home/war/WEB-INF/lib/groovy-all-2.4.21.jar) to method java.lang.Object.finalize()
+WARNING: Please consider reporting this to the maintainers of org.codehaus.groovy.reflection.CachedClass
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+2022-01-21 13:51:44.167+0000 [id=33]    INFO    jenkins.install.SetupWizard#init:
+
+*************************************************************
+*************************************************************
+*************************************************************
+
+Jenkins initial setup is required. An admin user has been created and a password generated.
+Please use the following password to proceed to installation:
+
+8239f5792b89445b91aac626e0f26cfb
+
+This may also be found at: /var/jenkins_home/secrets/initialAdminPassword
+
+*************************************************************
+*************************************************************
+*************************************************************
+
+2022-01-21 13:51:58.146+0000 [id=34]    INFO    jenkins.InitReactorRunner$1#onAttained: Completed initialization
+2022-01-21 13:51:58.168+0000 [id=23]    INFO    hudson.WebAppMain$3#run: Jenkins is fully up and running
+2022-01-21 13:51:58.987+0000 [id=49]    INFO    h.m.DownloadService$Downloadable#load: Obtained the updated data file for hudson.tasks.Maven.MavenInstaller
+2022-01-21 13:51:58.988+0000 [id=49]    INFO    hudson.util.Retrier#start: Performed the action check updates server successfully at the attempt #1
+2022-01-21 13:51:58.990+0000 [id=49]    INFO    hudson.model.AsyncPeriodicWork#lambda$doRun$1: Finished Download metadata. 15,426 ms
+^Cbabu@babu2:~/test
+babu@babu2:~/test$ docker ps -la
+CONTAINER ID   IMAGE             COMMAND                  CREATED              STATUS                        PORTS     NAMES
+0b49a2420f69   jenkins/jenkins   "/sbin/tini -- /usr/…"   About a minute ago   Exited (130) 41 seconds ago             zendu
+babu@babu2:~/test$ docker start zendu
+zendu
+babu@babu2:~/test$ ip r
+default via 10.1.0.1 dev eth0 proto dhcp src 10.1.0.4 metric 100
+10.1.0.0/24 dev eth0 proto kernel scope link src 10.1.0.4
+168.63.129.16 via 10.1.0.1 dev eth0 proto dhcp src 10.1.0.4 metric 100
+169.254.169.254 via 10.1.0.1 dev eth0 proto dhcp src 10.1.0.4 metric 100
+172.17.0.0/16 dev docker0 proto kernel scope link src 172.17.0.1
+babu@babu2:~/test$ docker ps
+CONTAINER ID   IMAGE             COMMAND                  CREATED         STATUS              PORTS                                                                                      NAMES
+0b49a2420f69   jenkins/jenkins   "/sbin/tini -- /usr/…"   3 minutes ago   Up About a minute   0.0.0.0:8080->8080/tcp, :::8080->8080/tcp, 0.0.0.0:50000->50000/tcp, :::50000->50000/tcp   zendu
+babu@babu2:~/test$
+
